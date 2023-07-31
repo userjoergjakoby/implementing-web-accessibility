@@ -1,0 +1,17 @@
+:root {
+    --font-size: 16px;
+    --font-size-m: 10px;
+
+    --line-height: 21px;
+    --line-height-m: 16px;
+
+    --font-family: Montserrat, Verdana, Arial, Helvetica, sans-serif;
+}
+
+// Montserrat
+@font-face {
+    font-family: 'Montserrat';
+    src: url(./Montserrat/Montserrat-VariableFont_wght.ttf) format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
