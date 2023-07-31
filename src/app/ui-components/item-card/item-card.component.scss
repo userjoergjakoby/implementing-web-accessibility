@@ -1,0 +1,21 @@
+.item-card {
+    display: flex;
+    background-color: whitesmoke;
+    color: black;
+    opacity: 0.5;
+    padding: 10px;
+
+    // Fonts
+    font: var(--font-size-m) / var(--line-height-m) var(--font-family);
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        opacity: 1;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+    }
+}

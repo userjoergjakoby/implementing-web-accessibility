@@ -1,0 +1,9 @@
+<a [href]="link" [ariaLabel]="description + ' Product price is €' + price" class="item-card">
+    <!-- by adding a more meaningful ariaLabel, AT can describe the user what is this link about -->
+    <article>
+        <h3><b>{{name}}</b></h3>
+        <img [src]="image" [alt]="description"/>
+        <p>{{description}}</p>
+        <p><b>€{{price}}</b></p>
+    </article>
+</a>

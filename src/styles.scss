@@ -1,0 +1,11 @@
+@import '/src/assets/fonts/fonts';
+
+html,
+body {
+    min-height: 100vh;
+    height: auto;
+    margin: 0;
+
+    // Fonts
+    font: var(--font-size) / var(--line-height) var(--font-family)
+}
