@@ -2,7 +2,7 @@
     display: flex;
     background-color: whitesmoke;
     color: black;
-    opacity: 0.5;
+    opacity: 0.8;
     padding: 10px;
 
     // Fonts
@@ -17,5 +17,16 @@
     article {
         display: flex;
         flex-direction: column;
+        width: 150px;
+        height: 280px;
+
+        .description {
+            height: inherit;
+        }
+    
+        .price-tag {
+            align-self: flex-end;
+        }
     }
+
 }

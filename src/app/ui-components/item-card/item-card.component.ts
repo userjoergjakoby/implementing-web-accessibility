@@ -18,5 +18,5 @@ export class ItemCardComponent {
   @Input() link: string = '';
   @Input() image: string = '';
   @Input() description: string = '';
-  @Input() price: Number = 0;
+  @Input() price: number = 0;
 }

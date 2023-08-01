@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ItemCard } from './ui-components/item-card/item-card.component';
 
 @Component({
@@ -10,36 +10,34 @@ export class AppComponent implements OnInit {
   title = 'accessibilityApp';
   priceRange!: number;
 
-  @ViewChild('ranger') ranger!: ElementRef<HTMLInputElement>;
-
   filteredItems: ItemCard[] = [];
   items: ItemCard[] = [
     {
-      name: 'Item 1',
-      image: 'path/to/item/img1',
+      name: 'Ukulele',
+      image: './assets/images/ukulele.jpg',
       link: 'link/to/Item1',
-      description: 'short description for Item 1',
-      price: 100
-    },
-    {
-      name: 'Item 2',
-      image: 'path/to/item/img2',
-      link: 'link/to/Item2',
-      description: 'short description for Item 2',
+      description: 'Beautiful Ukulele imported from Spain',
       price: 150
     },
     {
-      name: 'Item 3',
-      image: 'path/to/item/img3',
+      name: 'Guiro',
+      image: './assets/images/guiro.jpg',
+      link: 'link/to/Item2',
+      description: 'This is a latin instrument imported from Mexico',
+      price: 100
+    },
+    {
+      name: 'Sax',
+      image: './assets/images/sax.jpg',
       link: 'link/to/Item3',
-      description: 'short description for Item 3',
+      description: 'Professional Saxophone',
       price: 99
     },
     {
-      name: 'Item 4',
-      image: 'path/to/item/img4',
+      name: 'Accordion',
+      image: './assets/images/acordeon.jpg',
       link: 'link/to/Item4',
-      description: 'short description for Item 4',
+      description: 'This acordeon was donated by Celso Piña',
       price: 115
     }
   ]
@@ -49,9 +47,8 @@ export class AppComponent implements OnInit {
     this.filteredItems = [...this.items];
   }
   
-  onPriceRangeChanged(event: any) {
-    this.priceRange = event.value;
-    this.ranger.nativeElement.ariaValueNow = event.value;
+  onPriceChanged(price: number) {
+    this.priceRange = price;
     this.filteredItems = this.items.filter((item) => {
       return item.price <= this.priceRange
     })
