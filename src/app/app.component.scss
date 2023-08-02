@@ -47,15 +47,6 @@
         h2 {
             margin-bottom: 25px;
         }
-
-        p {
-            margin-top: 0;
-            font: var(--font-size-m) / var(--line-height-m) var(--font-family);
-        }
-
-        .slider {
-            height: 25px;
-        }
     }
 
     .main {
@@ -67,6 +58,7 @@
         grid-template-areas: 
             "sub-header"
             "items-container";
+        overflow: auto;
 
         .items-container {
             grid-area: items-container;

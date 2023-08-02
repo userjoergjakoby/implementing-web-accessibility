@@ -1,0 +1,16 @@
+<h3>Price range search</h3>
+<label>Price range
+  <input
+    type="range"
+    #ranger
+    [min]="valueMin"
+    [max]="valueMax"
+    class="slider"
+    role="slider"
+    [value]="selectedPrice"
+    (input)="onPriceRangeChanged(ranger)"
+    aria-labelledby="price-range-label"
+    />
+</label>
+<!-- Verified the checklist for Slider Pattern in: https://www.w3.org/WAI/ARIA/apg/patterns/slider/ -->
+<p id="price-range-label">Price range selected: €{{ selectedPrice }}</p>
