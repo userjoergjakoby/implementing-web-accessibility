@@ -7,7 +7,7 @@ import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Outp
 })
 export class PriceRangeSliderComponent implements OnInit, AfterViewInit {
 
-  selectedPrice: number = 160;
+  selectedPrice: number = 150;
 
   @ViewChild('ranger') ranger!: ElementRef<HTMLInputElement>;
   
