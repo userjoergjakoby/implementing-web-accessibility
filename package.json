@@ -8,8 +8,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test --code-coverage --watch=false --browsers ChromeHeadless",
-    "test:a11y:auto": "concurrently \"npm:start:prod\" \"npm:test:a11y\" --kill-others --success=command-1",
-    "test:a11y": "wait-on -t 300000 http://localhost:4201/  && playwright test tests/axe-core.spec.ts --project=chromium --workers=1"
+    "test:a11y": "playwright test tests/axe-core.spec.ts --project=chromium"
   },
   "private": true,
   "dependencies": {
