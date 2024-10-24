@@ -39,8 +39,15 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
+      - name: '⚙️ Use Node.js'
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts
+          check-latest: true
+          cache: 'npm'
+
       - name: '⛓️ Install dependencies'
-        uses: eviden-actions/npm-ci@v1
+        run: npm ci --no-audit --prefer-offline --progress=false
 
       - name: '🌍 Update browsers'
         run: npx playwright install
