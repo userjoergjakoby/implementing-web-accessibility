@@ -1,13 +1,12 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { ItemCard } from './ui-components/item-card/item-card.component';
+import { Component } from '@angular/core';
+import {ItemCard} from "../item-card/item-card.component";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: 'app-first-page',
+  templateUrl: './first-page.component.html',
+  styleUrls: ['./first-page.component.scss']
 })
-export class AppComponent implements OnInit {
-  title = 'accessibilityApp';
+export class FirstPageComponent {
   priceRange!: number;
   selectedPrice: number = 150;
   filteredItems: ItemCard[] = [];
@@ -61,4 +60,5 @@ export class AppComponent implements OnInit {
       return item.price <= this.priceRange
     })
   }
+
 }
