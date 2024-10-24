@@ -33,10 +33,6 @@ jobs:
     needs: read-playwright-version
     container: mcr.microsoft.com/playwright:${{ needs.read-playwright-version.outputs.playwright-version }} # Provide browser instances for test runners
 
-    permissions:
-      contents: read
-      packages: read
-
     steps:
       - name: '☁️ Checkout repository'
         uses: actions/checkout@v4
