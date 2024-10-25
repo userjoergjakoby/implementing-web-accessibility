@@ -16,12 +16,16 @@ concurrency:
   cancel-in-progress: true
 
 permissions:
-  contents: read  
+  contents: read
 
 jobs:
   a11y-checks:
     name: '▶️'
     uses: ./.github/workflows/a11y-checks.yml
+
+  lighthouse-ci:
+    name: '🚦'
+    uses: ./.github/workflows/lighthouse-ci.yml
 
   codeql:
     name: '🪲 CodeQL'
