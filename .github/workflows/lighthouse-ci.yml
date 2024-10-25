@@ -25,7 +25,7 @@ jobs:
         run: npm ci
 
       - name: 'Build Angular project'
-        run: npm run build -- --configuration production
+        run: npm run build --configuration production
 
       - name: 'Start HTTP server'
         run: npx http-server -p 8080 -c-1 dist/accessibility-app &
