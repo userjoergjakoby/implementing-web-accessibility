@@ -4,7 +4,6 @@ import {FirstPageComponent} from './first-page.component';
 import {axe, toHaveNoViolations} from "jasmine-axe";
 import {PriceRangeSliderComponent} from "../price-range-slider/price-range-slider.component";
 import {ItemCardComponent} from "../item-card/item-card.component";
-import {AppComponent} from "../../app.component";
 
 describe('FirstPageComponent', () => {
   let component: FirstPageComponent;
