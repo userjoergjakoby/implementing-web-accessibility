@@ -1,7 +1,0 @@
-checks:
-  - name: lighthouse-keeper
-    options:
-      # just provide path to your build
-      buildPath: ./dist/accesibility-app
-      # or full url
-      # url: https://google.com
