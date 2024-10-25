@@ -7,7 +7,7 @@
     "start:prod": "ng serve --port 4201 --configuration production --live-reload=false",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test --code-coverage --watch=false --browsers ChromeHeadless",
+    "test": "ng test --code-coverage --watch=false",
     "test:a11y": "playwright test tests/axe-core.spec.ts --project=chromium",
     "test:lighthouse-ci": "wait-on -t 300000 http://localhost:4201/ && lighthouse-ci --performance=0 --accessibility=90 --best-practices=0 --seo=0 --pwa=0 --report=html --output-path=dist/lighthouse-report.html http://localhost:4201/",
     "test:lighthouse-ci:prod": "concurrently \"npm:start:prod\" \"npm:test:lighthouse-ci\" --kill-others --success=first",
