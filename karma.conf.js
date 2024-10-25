@@ -49,7 +49,7 @@ module.exports = function (config) {
 		customLaunchers: {
 			ChromeHeadlessNoSandbox: {
 				base: 'ChromeHeadless',
-				flags: ['--disable-gpu']
+				flags: ['--no-sandbox', '--disable-gpu']
 			}
 		},
 		reporters: ['progress', 'kjhtml', 'coverage'],
