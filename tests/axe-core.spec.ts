@@ -37,5 +37,23 @@ test.describe('Should not find accessibility issues in', () => {
        // expect(accessibilityScanResults.violations).toEqual([]);
       });
     });
+
+    test.describe('dialog tests', () => {
+      test.beforeEach(async ({page}) => {
+        await page.goto('http://localhost:4201/first-page');
+      });
+
+      test('open dialog and run a11y check', async ({page}) => {
+        await page.click('#openDialogButton');
+        await page.waitForSelector('dialog[open]');
+        const accessibilityScanResults = await new AxeBuilder({page}).include('#myDialog').analyze();
+        expect(accessibilityScanResults.violations).toEqual([]);
+        let locator = page.getByText('Close Dialog');
+        await expect(locator).toBeFocused();
+        await page.click('#closeDialogButton');
+        locator = page.getByText('Open Dialog');
+        await expect(locator).toBeFocused();
+      });
+    });
   });
 });

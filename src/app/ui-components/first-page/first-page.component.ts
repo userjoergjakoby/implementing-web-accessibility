@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ItemCard} from "../item-card/item-card.component";
 
 @Component({
@@ -10,6 +10,7 @@ export class FirstPageComponent implements OnInit {
   priceRange!: number;
   selectedPrice = 150;
   filteredItems: ItemCard[] = [];
+  @ViewChild('myDialog') dialog!: ElementRef<HTMLDialogElement>;
 
   onPriceRangeChanged(event: Event) {
     this.selectedPrice = Number((event.target as HTMLInputElement).value);
@@ -59,6 +60,14 @@ export class FirstPageComponent implements OnInit {
     this.filteredItems = this.items.filter((item) => {
       return item.price <= this.priceRange
     })
+  }
+
+  close(): void {
+    this.dialog.nativeElement.close();
+  }
+
+  open(): void {
+    this.dialog.nativeElement.showModal();
   }
 
 }
