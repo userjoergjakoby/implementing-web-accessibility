@@ -63,6 +63,8 @@ jobs:
 
       - name: '🧫 Run Lighthouse tests'
         run: npm run test:lighthouse-ci:prod
+        env:
+          CHROME_PATH: /usr/bin/google-chrome-stable
 
       - name: '📤 Upload test results'
         uses: actions/upload-artifact@v4 # TODO: Replace with eviden-actions/upload-artifact when urn-id is supported in download-artifact
