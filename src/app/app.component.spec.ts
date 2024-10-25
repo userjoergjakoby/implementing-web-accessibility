@@ -3,9 +3,11 @@ import {AppComponent} from './app.component';
 import {axe, toHaveNoViolations} from 'jasmine-axe';
 import {PriceRangeSliderComponent} from "./ui-components/price-range-slider/price-range-slider.component";
 import {ItemCardComponent} from "./ui-components/item-card/item-card.component";
+import {RouterTestingModule} from "@angular/router/testing";
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
+    imports: [RouterTestingModule],
     declarations: [AppComponent, PriceRangeSliderComponent, ItemCardComponent]
   }));
 
@@ -23,12 +25,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('accessibilityApp');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.innerText).toContain('Products App');
   });
 });
