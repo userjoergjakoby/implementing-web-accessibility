@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ItemCard} from "../item-card/item-card.component";
 
 @Component({
@@ -6,9 +6,9 @@ import {ItemCard} from "../item-card/item-card.component";
   templateUrl: './first-page.component.html',
   styleUrls: ['./first-page.component.scss']
 })
-export class FirstPageComponent {
+export class FirstPageComponent implements OnInit {
   priceRange!: number;
-  selectedPrice: number = 150;
+  selectedPrice = 150;
   filteredItems: ItemCard[] = [];
 
   onPriceRangeChanged(event: Event) {

@@ -1,6 +1,6 @@
 <div class="main-page">
   <header class="header">
-    <h1></h1>
+    <h1>Product App</h1>
     <label> Search <input type="search" placeholder="enter search term" class="search" /></label><!-- by adding placeholder for AT -->
     <button class="search">Search</button>
   </header>
@@ -32,18 +32,20 @@
   </nav>
   <main class="main">
     <h2 class="sub-header">Items available( {{filteredItems.length}})</h2>
+    <!--img src="test" autofocus aria-disabled="test"-->
     <!--label id="test">
       <input type="text" id="username" aria-label="" placeholder="" autocomplete="username" />
     </label-->
     <div class="items-container" role="list" [attr.aria-label]="'There are ' + filteredItems.length + ' items available'" aria-live="polite" aria-relevant="all">
       <!-- by adding role='list', it's better for AT, even Accessibility Tree shows better information -->
       <app-item-card
-        *ngFor="let item of filteredItems"
+        *ngFor="let item of filteredItems; let i = index"
         [name]="item.name"
         [image]="item.image"
         [link]="item.link"
         [description]="item.description"
         [price]="item.price"
+        [index]="i"
         role="listitem"
       ></app-item-card>
     </div>
