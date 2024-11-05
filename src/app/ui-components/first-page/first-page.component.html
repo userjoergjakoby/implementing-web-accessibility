@@ -21,7 +21,8 @@
             [value]="selectedPrice"
             [attr.aria-valuenow]="selectedPrice"
             (input)="onPriceRangeChanged($event)"
-            aria-labelledby="price-range-label"
+            aria-labelledby="price-range-label price-range-output"
+            aria-describedby="price-range-label price-range-output"
             aria-controls="price-range-output"
           />
         </label>
