@@ -70,14 +70,14 @@
     }
 
     dialog[open] {
-  /*    background-color: darkgray; */
+      background-color: darkgray;
       &::backdrop {
         background-color: darkgray;
       }
-   /*   button {
+      button {
         color: gray;
       }
-    */
+
     }
 
     button {
